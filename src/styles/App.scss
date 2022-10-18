@@ -1,0 +1,46 @@
+// Tools
+@import "~bootstrap/scss/bootstrap";
+@import "./tools/fonts.scss";
+@import "./tools/variables.scss";
+@import "./tools/rules.scss";
+@import "./tools/forms.scss";
+@import "./tools/pages.scss";
+@import "./tools/loader.scss";
+@import "./tools/cursor.scss";
+
+
+// Sections
+@import "./sections/header.scss";
+@import "./sections/footer.scss";
+
+// Pages
+@import "./pages/home.scss";
+@import "./pages/notFound.scss";
+
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+        "Droid Sans", "Helvetica Neue", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.App {
+    text-align: center;
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}

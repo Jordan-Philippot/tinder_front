@@ -1,0 +1,73 @@
+/* ----- Colors dark to light ----- */
+$black: #000;
+$lightblack: #090E1A;
+$dark: #212529;
+$grey: #6c757d;
+$lightergrey: #ced4da;
+$white: #ffffff;
+
+/* ----- Colors ----- */
+$turquoise: #B6F6FF;
+$lightblue: #EFF4FF;
+$aqua: #71DBEA;
+$yellow: #FFCF59;
+$orange: #FF9900;
+$blue: #5a8aff;
+$red: #f10000;
+$lightgreen: #DDFCE8;
+
+
+/* ----- Font/text values ----- */
+$font-family-light: sans-serif;
+$font-family-normal: sans-serif;
+$font-family-medium: sans-serif;
+$font-family-bold: sans-serif;
+
+
+/* ----- Breakpoint values ----- */
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// Smartphone
+@mixin sm {
+    @media (min-width: #{$screen-sm-min}) and (min-height: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+@mixin sm-landscape {
+    @media (max-width: #{$screen-lg-min}) and (max-height: #{$screen-sm-min}) {
+        @content;
+    }
+}
+
+// Medium devices
+@mixin md {
+    @media (min-width: #{$screen-md-min}) {
+        @content;
+    }
+}
+
+// Large devices
+@mixin lg {
+    @media (min-width: #{$screen-lg-min}) {
+        @content;
+    }
+}
+
+// Extra large devices
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+}
