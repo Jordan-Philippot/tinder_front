@@ -8,7 +8,6 @@
 @import "./tools/loader.scss";
 @import "./tools/cursor.scss";
 
-
 // Sections
 @import "./sections/header.scss";
 @import "./sections/footer.scss";
@@ -16,7 +15,8 @@
 // Pages
 @import "./pages/home.scss";
 @import "./pages/notFound.scss";
-
+@import "./pages/registration.scss";
+@import "./pages/dashboard.scss";
 
 body {
     margin: 0;
@@ -32,15 +32,6 @@ code {
 
 .App {
     text-align: center;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
+    font-family: $font-family-nunito;
+    font-weight: bold;
 }

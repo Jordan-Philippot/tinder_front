@@ -1,32 +1,41 @@
-import React from 'react'
+import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
-// ----- Packages -----
-import { useMediaQuery } from 'react-responsive'
+import Logo from '../../images/tinder.png'
 
-// ----- Components -----
-import HeaderDesktop from "./HeaderDesktop"
-import HeaderTablet from "./HeaderTablet"
+export default function Header({ token }) {
+    const [disconnectedUser, setDisconnectedUser] = useState(false)
 
-export default function Header({token}) {
 
-    const Desktop = ({ children }) => {
-        const isDesktop = useMediaQuery({ minWidth: 1200 })
-        return isDesktop ? children : null
+    const disconnected = () => {
+        if (localStorage.getItem('tokenTinder')) {
+            setDisconnectedUser(true)
+        }
     }
-    const Tablet = ({ children }) => {
-        const isTablet = useMediaQuery({ maxWidth: 1199.98 })
-        return isTablet ? children : null
-    }
+    useEffect(() => {
+        if (disconnectedUser) {
+            localStorage.removeItem('tokenTinder');
+            window.location.href = "/";
+        }
+    }, [disconnectedUser]);
 
     return (
         <header>
-            <Desktop>
-                <HeaderDesktop token={token}/>
-            </Desktop>
-            {/*  */}
-            <Tablet>
-                <HeaderTablet token={token}/>
-            </Tablet>
+            <Link to={"/"} id="logo">
+                <img src={Logo} alt="tinder" />
+                <p className={`${window.location.pathname === "/" ? 'text-white' : 'text-black'}`}>PAYTASCHNECK</p>
+            </Link>
+
+
+
+            <div id="login-btn" >
+                {token ?
+                    <button className="btn-default btn-white" onClick={disconnected}>Se deconnecter</button>
+                    :
+                    <Link className="btn-default btn-white" to={"/login"}>Se connecter</Link>
+                }
+            </div>
+
         </header>
     )
 }
